@@ -19,7 +19,7 @@ class gRPCClient(private var url: String)  {
 
   def TimeFunction( timeData: TimeData): Boolean = {
     //logger.trace(s"calculate(expression: $expression")
-
+    print("url" + url)
     // Make POST request to calculator API Gateway
     val request = Http(url)
       .headers(Map(
@@ -35,7 +35,7 @@ class gRPCClient(private var url: String)  {
     val responseMessage = TimeResponse.parseFrom(response.body)
     println(s"Got response: $responseMessage")
 
-    println("response" +responseMessage)
+    println("response" + response)
     //
     //
     //     //Parse response from API to protobuf Response object

@@ -45,18 +45,36 @@ object Client extends App {
     else
       settings.apiGatewayUrlRest
 
-  // Instantiate CalculatorClient based on the apiType
-  val client = new gRPCClient(url)
+  println("url" + url)
 
-  val time = "17:12:58.673"
+
+  // Instantiate CalculatorClient based on the apiType
+  val client =
+  //if (apiType.equalsIgnoreCase("grpc"))
+    new gRPCClient(url)
+  //    else
+  //      new CalculatorRestClient(url)
+
+  // Print menu and wait for user input
+  //while (true) {
+  println("enter the time")
+
+  val time = StdIn.readLine()
+  //val time = "17:12:58.686"
+  println("enter time interval")
+
+  val dt = StdIn.readLine()
+
+  val value = if(time == null) dt else time
+
+  println("value" + value)
+
+  //      val number2 = StdIn.readDouble()
 
   // Make an Expression protobuf and evaluate the result
   val result = client.TimeFunction(
-    TimeData(time = time)
+    TimeData(time = value)
     )
   println(s"\nResult = $result")
-
-  if(result) {
-    val restClient = new restClient
-  }
+  //}
 }
