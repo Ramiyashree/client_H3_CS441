@@ -1,7 +1,6 @@
 package com.ramiya.cs441.h3
 
-import com.typesafe.config.ConfigFactory
-
+import com.typesafe.config.{Config, ConfigFactory}
 import h3.{TimeData, TimeResponse}
 
 import scala.io.StdIn
@@ -18,54 +17,46 @@ import scala.io.StdIn
  */
 object Client extends App {
 
-  // Load application settings
-  val settings = new Settings(ConfigFactory.load())
+
+  val conf: Config = ConfigFactory.load("application.conf")
+
+  val grpcEndpoint: String = conf.getString("clientConfig.grpcEndPoint")
+  val restEndpoint: String = conf.getString("clientConfig.restEndPoint")
+
+  val inputTime : String = conf.getString("clientConfig.inputTime")
 
   // Initialize API-type from the specified arguments or from the settings
-  val apiType =
-    if (args.nonEmpty) {
-      if (Seq("grpc", "rest").contains(args(0).toLowerCase)) {
-        args(0)
-      }
-      else {
-        println("Invalid API type. Must be one of ('grpc','rest')")
-        sys.exit(-1)
-      }
-    }
-    else {
-      settings.defaultAPIType
-    }
-
-  // Initialize API Gateway URL from the specified arguments or from the settings
-  val url =
-    if (args.length > 1)
-      args(1)
-    else if (apiType.equalsIgnoreCase("grpc"))
-      settings.apiGatewayUrlGrpc
-    else
-      settings.apiGatewayUrlRest
-
-  println("url" + url)
-
+//  val apiType =
+//    if (args.nonEmpty) {
+//      if (Seq("grpc", "rest").contains(args(0).toLowerCase)) {
+//        args(0)
+//      }
+//      else {
+//        println("Invalid API type. Must be one of ('grpc','rest')")
+//        sys.exit(-1)
+//      }
+//    }
+//    else {
+//      settings.defaultAPIType
+//    }
+//
+//  // Initialize API Gateway URL from the specified arguments or from the settings
+//  val url =
+//    if (args.length > 1)
+//      args(1)
+//    else if (apiType.equalsIgnoreCase("grpc"))
+//      settings.apiGatewayUrlGrpc
+//    else
+//      settings.apiGatewayUrlRest
+//
+//  println("url" + url)
 
   // Instantiate CalculatorClient based on the apiType
-  val client =
-  //if (apiType.equalsIgnoreCase("grpc"))
-    new gRPCClient(url)
-  //    else
-  //      new CalculatorRestClient(url)
-
-
-  println("enter the time")
-
-  val value = "17:12:58.745"
-
-  println("value" + value)
+  val client =  new gRPCClient(grpcEndpoint)
 
   val result = client.TimeFunction(
-    TimeData(time = value)
+    TimeData(time = inputTime)
     )
 
-  print(s"finalResult: ${result}")
-
+  print(s"Time is Present: ${result}")
 }

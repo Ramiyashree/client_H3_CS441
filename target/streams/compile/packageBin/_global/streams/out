@@ -28,10 +28,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\com\ramiya\cs441\h3\restClient$Request.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com\ramiya\cs441\h3\restClient.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\com\ramiya\cs441\h3\restClient.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com\ramiya\cs441\h3\Settings$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\com\ramiya\cs441\h3\Settings$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	com\ramiya\cs441\h3\Settings.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\com\ramiya\cs441\h3\Settings.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	h3[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\h3[0m
 [0m[[0m[0mdebug[0m] [0m[0m	h3\H3Proto$.class[0m
@@ -74,6 +70,4 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\h3.proto[0m
 [0m[[0m[0mdebug[0m] [0m[0m	LogFileGenerator.2021-10-09.log[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\LogFileGenerator.2021-10-09.log[0m
-[0m[[0m[0mdebug[0m] [0m[0m	reference.conf[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\19405\Desktop\CS441H3Client\target\scala-2.13\classes\reference.conf[0m
 [0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
