@@ -25,8 +25,9 @@ libraryDependencies ++=Seq(
   "com.amazonaws" % "aws-java-sdk-s3" % "1.12.90",
   "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapb.compiler.Version.scalapbVersion,
   "org.scalaj" %% "scalaj-http" % "2.4.2",
-  "com.twitter" %% "finagle-http" % "21.9.0"
+  "com.google.code.gson" % "gson" % "2.8.8"
 )
+
 
 Compile / PB.targets := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value

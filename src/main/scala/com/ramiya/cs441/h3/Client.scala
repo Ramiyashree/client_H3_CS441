@@ -55,26 +55,17 @@ object Client extends App {
   //    else
   //      new CalculatorRestClient(url)
 
-  // Print menu and wait for user input
-  //while (true) {
+
   println("enter the time")
 
-  val time = StdIn.readLine()
-  //val time = "17:12:58.686"
-  println("enter time interval")
-
-  val dt = StdIn.readLine()
-
-  val value = if(time == null) dt else time
+  val value = "17:12:58.745"
 
   println("value" + value)
 
-  //      val number2 = StdIn.readDouble()
-
-  // Make an Expression protobuf and evaluate the result
   val result = client.TimeFunction(
     TimeData(time = value)
     )
-  println(s"\nResult = $result")
-  //}
+
+  print(s"finalResult: ${result}")
+
 }

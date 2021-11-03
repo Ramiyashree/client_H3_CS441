@@ -1,4 +1,2 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\19405\Desktop\CS441H3Client\src\main\scala\com\ramiya\cs441\h3\Client.scala:98:23: value TimeFunction is not a member of Object[0m
-[0m[[0m[31merror[0m] [0m[0m  val result = client.TimeFunction([0m
-[0m[[0m[31merror[0m] [0m[0m                      ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0m2 deprecations (since 2.13.0); re-run with -deprecation for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

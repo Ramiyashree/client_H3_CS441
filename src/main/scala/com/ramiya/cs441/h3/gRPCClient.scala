@@ -47,6 +47,6 @@ class gRPCClient(private var url: String)  {
     //
     //     //  Return the result
     //    responseMessage.result
-    true
+    responseMessage.result
   }
 }
