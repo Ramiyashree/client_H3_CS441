@@ -17,7 +17,6 @@ import scala.io.StdIn
  */
 object Client extends App {
 
-
   val conf: Config = ConfigFactory.load("application.conf")
 
   val grpcEndpoint: String = conf.getString("clientConfig.grpcEndPoint")
@@ -54,9 +53,7 @@ object Client extends App {
   // Instantiate CalculatorClient based on the apiType
   val client =  new gRPCClient(grpcEndpoint)
 
-  val result = client.TimeFunction(
-    TimeData(time = inputTime)
-    )
+  val result = client.TimeFunction( TimeData(time = inputTime))
 
   print(s"Time is Present: ${result}")
 }

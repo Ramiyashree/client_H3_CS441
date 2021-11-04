@@ -15,9 +15,9 @@ import com.amazonaws.services.s3.model.GetObjectRequest
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides
 import com.amazonaws.services.s3.model.S3Object
 
-class gRPCClient(private var url: String)  {
+class gRPCClient(private val url: String)  {
 
-  def TimeFunction( timeData: TimeData): Boolean = {
+  def TimeFunction(timeData: TimeData): Boolean = {
     val request = Http(url)
       .headers(Map(
         "Content-Type" -> "application/grpc+proto",
@@ -25,7 +25,6 @@ class gRPCClient(private var url: String)  {
       )).postData(timeData.toByteArray)
 
 
-    // logger.debug(s"Making HTTP request: $request")
     val response = request.asBytes
     val responseMessage = TimeResponse.parseFrom(response.body)
     println(s"Got response: $responseMessage")
